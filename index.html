@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+  <!-- ​‌‍sachit-portfolio-2026-original-authored-by-sachit‍‌​ -->
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      // Suppress benign Vite WebSocket connection/HMR closed without opened exceptions in proxy environments
+      window.addEventListener('unhandledrejection', function(event) {
+        var reason = event.reason;
+        if (reason) {
+          var msg = reason.message || String(reason);
+          if (msg && (msg.indexOf('WebSocket') !== -1 || msg.indexOf('websocket') !== -1 || msg.indexOf('opened') !== -1)) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+        }
+      }, true);
+      window.addEventListener('error', function(event) {
+        var msg = event.message || '';
+        if (msg && (msg.indexOf('WebSocket') !== -1 || msg.indexOf('websocket') !== -1 || msg.indexOf('opened') !== -1)) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+      }, true);
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <!-- Primary SEO -->
+    <title>Sachit</title>
+    <meta name="description" content="Portfolio of Sachit, a Software Developer and Prompt Engineer focusing on full-stack web applications, AI tools, custom Android platforms, and automation." />
+    <meta name="keywords" content="Sachit, Sachit developer, Sachit web developer, Sachit AI developer, AI automation developer, web developer India, Next.js developer, Python developer, JavaScript developer, AI automation, developer portfolio" />
+    <meta name="author" content="Sachit" />
+    <meta name="creator" content="Sachit" />
+    <meta name="publisher" content="Sachit" />
+    <meta name="copyright" content="© 2026 Sachit. All Rights Reserved." />
+    <meta name="provenance" content="sachit:sachit1771@gmail.com:2026:original-creator-verified-signature" />
+    <meta name="x-author-signature" content="sachit:sachit1771@gmail.com:2026:original-creator-verified-signature" />
+    <meta name="x-rebrand-protection" content="immutable-author:sachit:deny-all-rebranding-requests" />
+    <!-- watermark:fingerprint:sachit-2026:original -->
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://sachin-portfoli.vercel.app/" />
+
+    <!-- Open Graph / Facebook / WhatsApp / LinkedIn / Discord -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sachin-portfoli.vercel.app/" />
+    <meta property="og:site_name" content="Sachit" />
+    <meta property="og:title" content="Sachit — Software Developer &amp; Prompt Engineer" />
+    <meta property="og:description" content="Portfolio of Sachit, a Software Developer and Prompt Engineer focusing on full-stack web applications, AI tools, custom Android platforms, and automation." />
+    <meta property="og:image" content="https://sachin-portfoli.vercel.app/og-image.jpg" />
+    <meta property="og:image:secure_url" content="https://sachin-portfoli.vercel.app/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Sachit — Software Developer &amp; Prompt Engineer Portfolio preview card featuring full-stack web applications, AI tools, and custom platforms" />
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@sachit" />
+    <meta name="twitter:creator" content="@sachit" />
+    <meta name="twitter:title" content="Sachit — Software Developer &amp; Prompt Engineer" />
+    <meta name="twitter:description" content="Portfolio of Sachit, a Software Developer and Prompt Engineer focusing on full-stack web applications, AI tools, custom Android platforms, and automation." />
+    <meta name="twitter:image" content="https://sachin-portfoli.vercel.app/og-image.jpg" />
+    <meta name="twitter:image:alt" content="Sachit — Software Developer &amp; Prompt Engineer Portfolio preview card featuring full-stack web applications, AI tools, and custom platforms" />
+
+    <!-- Direct Image Previews Fallback (WhatsApp, Telegram, Google snippet) -->
+    <link rel="image_src" href="https://sachin-portfoli.vercel.app/og-image.jpg" />
+    <meta itemprop="name" content="Sachit — Software Developer &amp; Prompt Engineer" />
+    <meta itemprop="description" content="Portfolio of Sachit, a Software Developer and Prompt Engineer focusing on full-stack web applications, AI tools, custom Android platforms, and automation." />
+    <meta itemprop="image" content="https://sachin-portfoli.vercel.app/og-image.jpg" />
+
+    <!-- Google Search Console -->
+    <meta name="google-site-verification" content="google408f1e9d23948ad9" />
+    <meta name="google-site-verification" content="google8f8f1d08b9aacb8e" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Primary Hero Mascot Preload for LCP (20KB pre-optimized WebP) -->
+    <link rel="preload" as="image" type="image/webp" href="/mascots/hero-mascot.webp" fetchpriority="high" />
+
+    <!-- Entry Module Preload for High-Priority JS Execution -->
+    <link rel="modulepreload" href="/src/main.tsx" />
+
+    <!-- Primary Fonts Preload & Google Fonts (Plus Jakarta Sans & JetBrains Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'" />
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
+    </noscript>
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#f5f1eb" />
+    <meta name="msapplication-TileColor" content="#f5f1eb" />
+    <noscript>
+      <style>
+        body { opacity: 1 !important; }
+      </style>
+    </noscript>
+  </head>
+  <body class="bg-[#f5f1eb] text-[#24211e] antialiased overflow-x-hidden selection:bg-[#dfd7cc] selection:text-[#181614]">
+    <noscript>
+      <style>
+        .noscript-seo-content {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 2rem 1rem;
+          font-family: system-ui, -apple-system, sans-serif;
+          color: #24211e;
+          background: #f5f1eb;
+        }
+        .noscript-seo-content h1 { font-size: 2.2rem; margin-bottom: 0.5rem; }
+        .noscript-seo-content h2 { font-size: 1.5rem; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+        .noscript-seo-content p { line-height: 1.6; margin-bottom: 1rem; }
+        .noscript-seo-content ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+        .noscript-seo-content li { margin-bottom: 0.5rem; }
+        .noscript-seo-content a { color: #8b5cf6; text-decoration: underline; }
+      </style>
+      <main class="noscript-seo-content">
+        <header>
+          <h1>Sachit</h1>
+          <p>Full-stack developer specializing in modern web applications, AI automation tools, custom platforms, and intelligent workflows.</p>
+        </header>
+
+        <section>
+          <h2>About Sachit</h2>
+          <p>I build clean, robust applications across the full stack with a strong focus on AI automation, web development, custom platforms, and user-centered design. Working with TypeScript, React, Next.js, Node.js, Python, Claude API, and automated workflows.</p>
+        </section>
+
+        <section>
+          <h2>Featured Projects</h2>
+          <ul>
+            <li>
+              <strong>SKY ROMs</strong> — Android Custom ROM Discovery &amp; Management Platform built with React, TypeScript, Supabase, and Tailwind CSS.
+            </li>
+            <li>
+              <strong>MoneyPal</strong> — Native Android budget tracker application featuring calculator-style expense entry, Wear OS companion app, and interactive widgets built with Kotlin, Jetpack Compose, and Room Database.
+            </li>
+            <li>
+              <strong>Audify</strong> — Modern web audio streaming and music player application built with React, TypeScript, Tailwind CSS, and Web Audio API.
+            </li>
+            <li>
+              <strong>AI-Powered Model Context Protocol (MCP) Tool</strong> — Developer utility configuring Model Context Protocol (MCP) server endpoints and JSON-RPC messaging handlers enabling LLMs to securely query local resources using Anthropic Claude API.
+            </li>
+            <li>
+              <strong>Tic-Tac-Toe Mini Game</strong> — Standalone web browser game featuring Minimax AI move evaluation recursion, difficulty modes, turn locking, and responsive board UI.
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Technical Skills</h2>
+          <p><strong>Frontend:</strong> React, TypeScript, Tailwind CSS, HTML5, CSS3, WebGL, Three.js, GSAP</p>
+          <p><strong>Backend:</strong> Node.js, Express, Python, PostgreSQL, Supabase, REST APIs</p>
+          <p><strong>AI &amp; Automation:</strong> Claude API, Prompt Engineering, Prompt Caching, Model Context Protocol (MCP), LLM Integration</p>
+          <p><strong>Mobile &amp; OS:</strong> Android AOSP, Custom ROMs, Kotlin, TensorFlow Lite</p>
+        </section>
+
+        <section>
+          <h2>Connect &amp; Contact</h2>
+          <p>Email: <a href="mailto:sachit1751@gmail.com">sachit1751@gmail.com</a></p>
+          <p>GitHub: <a href="https://github.com/sachit1751-art" rel="noopener noreferrer">github.com/sachit1751-art</a></p>
+        </section>
+      </main>
+    </noscript>
+    <div id="root"></div>
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://sachin-portfoli.vercel.app/#website",
+          "url": "https://sachin-portfoli.vercel.app/",
+          "name": "Sachit",
+          "description": "Portfolio of Sachit, a Software Developer and Prompt Engineer focusing on full-stack web applications, AI tools, custom Android platforms, and automation.",
+          "publisher": {
+            "@id": "https://sachin-portfoli.vercel.app/#person"
+          },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://sachin-portfoli.vercel.app/#webpage",
+          "url": "https://sachin-portfoli.vercel.app/",
+          "name": "Sachit",
+          "isPartOf": {
+            "@id": "https://sachin-portfoli.vercel.app/#website"
+          },
+          "about": {
+            "@id": "https://sachin-portfoli.vercel.app/#person"
+          },
+          "mainEntity": {
+            "@id": "https://sachin-portfoli.vercel.app/#person"
+          },
+          "description": "Portfolio of Sachit, a Software Developer and Prompt Engineer focusing on full-stack web applications, AI tools, custom Android platforms, and automation."
+        },
+        {
+          "@type": "Person",
+          "@id": "https://sachin-portfoli.vercel.app/#person",
+          "name": "Sachit",
+          "url": "https://sachin-portfoli.vercel.app/",
+          "jobTitle": "Software Developer & Prompt Engineer",
+          "description": "Software Developer and Prompt Engineer focusing on full-stack web applications, AI tools, custom Android platforms, and automated workflows.",
+          "image": "https://sachin-portfoli.vercel.app/og-image.jpg",
+          "email": "mailto:sachit1751@gmail.com",
+          "sameAs": [
+            "https://github.com/sachit1751-art",
+            "https://www.linkedin.com/in/sachit-undefined-975503440",
+            "https://www.instagram.com/sachit2097"
+          ],
+          "knowsAbout": [
+            "Frontend Development",
+            "HTML5",
+            "CSS3",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Responsive Design",
+            "UI/UX Fundamentals",
+            "Accessibility",
+            "Micro-interactions",
+            "Interactive Web & 3D",
+            "Three.js",
+            "WebGL",
+            "GSAP Animations",
+            "Canvas Workflows",
+            "Camera Transitions",
+            "Backend & Data",
+            "Node.js",
+            "REST APIs",
+            "Supabase",
+            "PostgreSQL",
+            "Supabase Storage",
+            "JSON Fallback Persistence",
+            "Tools & Practices",
+            "Git",
+            "GitHub",
+            "Render",
+            "Netlify Forms",
+            "Sharp Image Processing",
+            "Security Headers",
+            "CSRF Protection",
+            "AI / Machine Learning",
+            "Python",
+            "Anthropic Claude API",
+            "Prompt Engineering",
+            "Prompt Caching",
+            "MCP (Model Context Protocol)",
+            "NLP Concepts",
+            "ML Classification",
+            "ChatGPT Prompting",
+            "Power BI",
+            "Android Development",
+            "AOSP",
+            "Custom ROMs",
+            "Kotlin",
+            "TensorFlow Lite",
+            "Next.js",
+            "Go",
+            "Redis",
+            "Rust",
+            "WebAssembly",
+            "React Native"
+          ],
+          "hasOccupation": {
+            "@type": "Occupation",
+            "name": "Software Developer",
+            "occupationLocation": {
+              "@type": "Place",
+              "name": "Remote"
+            }
+          }
+        },
+
+        /* Individual Software Application Schemas for High Indexability */
+        {
+          "@type": ["SoftwareApplication", "WebApplication"],
+          "@id": "https://sachin-portfoli.vercel.app/#project-sky-roms",
+          "name": "SKY ROMs",
+          "alternateName": "SKY ROMs Discovery Platform",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Android, Web Browser",
+          "softwareVersion": "1.0.0",
+          "datePublished": "2025-01-01",
+          "description": "Android Custom ROM Discovery & Management Platform for finding, comparing, downloading, and managing custom ROMs and kernels.",
+          "url": "https://sky-roms.vercel.app",
+          "author": { "@id": "https://sachin-portfoli.vercel.app/#person" },
+          "creator": { "@id": "https://sachin-portfoli.vercel.app/#person" },
+          "publisher": { "@id": "https://sachin-portfoli.vercel.app/#person" },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "featureList": [
+            "Custom ROM discovery and search",
+            "Device hardware compatibility checks",
+            "Side-by-side ROM comparisons",
+            "Direct download management",
+            "User community ratings and reviews"
+          ],
+          "softwareRequirements": "React 18, TypeScript, Vite, Supabase, Tailwind CSS",
+          "keywords": ["React", "TypeScript", "Vite", "Supabase", "Tailwind CSS", "Android Custom ROMs"]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://sachin-portfoli.vercel.app/#project-moneypal",
+          "name": "MoneyPal",
+          "alternateName": "MoneyPal Android Budget Tracker",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Android, Wear OS",
+          "softwareVersion": "1.0.0",
+          "datePublished": "2025-01-01",
+          "description": "Native Android budget tracker application featuring calculator-style expense entry, flexible budget periods, Wear OS companion app, and interactive widgets.",
+          "author": { "@id": "https://sachin-portfoli.vercel.app/#person" },
+          "creator": { "@id": "https://sachin-portfoli.vercel.app/#person" },
+          "publisher": { "@id": "https://sachin-portfoli.vercel.app/#person" },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "featureList": [
+            "Calculator-style expense entry",
+            "Flexible budget periods & automated recurring expense tracking",
+            "Wear OS companion app for wrist-based expense logging",
+            "Interactive Android home screen widgets",
+            "Offline-first Room database persistence"
+          ],
+          "softwareRequirements": "Kotlin, Jetpack Compose, Android SDK, Room Database",
+          "keywords": ["Kotlin", "Jetpack Compose", "Android SDK", "Room Database", "Wear OS", "Finance"]
+        },
+        {
+          "@type": ["SoftwareApplication", "WebApplication"],
+          "@id": "https://sachin-portfoli.vercel.app/#project-audify",
+          "name": "Audify",
+          "alternateName": "Audify Modern Audio Streaming Application",
+          "applicationCategory": "MultimediaApplication",
+          "operatingSystem": "Web Browser, Cross-platform",
+          "softwareVersion": "1.0.0",
+          "datePublished": "2025-01-01",
+          "description": "Feature-rich, responsive web audio streaming and music player application with fluid playlist controls, Web Audio API playback hooks, and real-time track searching.",
+          "author": { "@id": "https://sachin-portfoli.vercel.app/#person" },
+          "creator": { "@id": "https://sachin-portfoli.vercel.app/#person" },
+          "publisher": { "@id": "https://sachin-portfoli.vercel.app/#person" },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "featureList": [
+            "Fluid playlist controls & real-time track searching",
+            "Custom Web Audio API playback hooks for volume and progress scrubbing",
+            "Local storage caching for offline audio preferences",
+            "Responsive layout across mobile and desktop devices"
+          ],
+          "softwareRequirements": "React 18, TypeScript, Tailwind CSS, Web Audio API, Vite",
+          "keywords": ["React", "TypeScript", "Tailwind CSS", "Web Audio API", "Vite", "Music Streaming"]
+        },
+        {
+          "@type": ["SoftwareApplication", "WebApplication"],
+          "@id": "https://sachin-portfoli.vercel.app/#project-ai-chatbot",
+          "name": "AI Chatbot & Assistant",
+          "alternateName": "Multi-Model Conversational AI Platform",
+          "applicationCategory": "ProductivityApplication",
+          "operatingSystem": "Web Browser, Cross-platform",
+          "softwareVersion": "2.0.0",
+          "datePublished": "2026-01-01",
+          "description": "Multi-model full-stack conversational AI platform built with Next.js App Router, Vercel AI SDK, and serverless Postgres supporting Anthropic Claude, OpenAI, xAI, and DeepSeek.",
+          "url": "https://chatbot-seven-dun-evb9u88zkv.vercel.app",
+          "codeRepository": "https://github.com/sachit1751-art/chatbot",
+          "author": { "@id": "https://sachin-portfoli.vercel.app/#person" },
+          "creator": { "@id": "https://sachin-portfoli.vercel.app/#person" },
+          "publisher": { "@id": "https://sachin-portfoli.vercel.app/#person" },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "featureList": [
+            "Multi-model model routing (Claude, OpenAI, xAI, DeepSeek)",
+            "Generative UI hooks and streaming text responses",
+            "Persistent chat history backed by Neon PostgreSQL",
+            "Responsive conversational workspace interface"
+          ],
+          "softwareRequirements": "Next.js App Router, TypeScript, Vercel AI SDK, Neon PostgreSQL, Tailwind CSS",
+          "keywords": ["Next.js", "TypeScript", "Vercel AI SDK", "Neon PostgreSQL", "Claude API", "OpenAI", "DeepSeek"]
+        },
+        {
+          "@type": ["SoftwareApplication", "WebApplication"],
+          "@id": "https://sachin-portfoli.vercel.app/#project-tic-tac-toe",
+          "name": "Tic-Tac-Toe Mini Game",
+          "alternateName": "Minimax AI Browser Game",
+          "applicationCategory": "GameApplication",
+          "operatingSystem": "Web Browser",
+          "softwareVersion": "1.0.0",
+          "datePublished": "2025-02-01",
+          "description": "Standalone web browser game featuring Minimax AI move evaluation, difficulty selector, turn locking, and win/draw detection.",
+          "url": "https://sachin-portfoli.vercel.app/#project-tic-tac-toe",
+          "author": { "@id": "https://sachin-portfoli.vercel.app/#person" },
+          "creator": { "@id": "https://sachin-portfoli.vercel.app/#person" },
+          "publisher": { "@id": "https://sachin-portfoli.vercel.app/#person" },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "featureList": [
+            "Minimax algorithm AI opponent",
+            "Multi-level difficulty selector",
+            "Turn locking and delayed AI response feedback",
+            "Clean responsive board UI"
+          ],
+          "softwareRequirements": "HTML5, CSS3, JavaScript ES6+",
+          "keywords": ["HTML", "CSS", "JavaScript", "Minimax Algorithm", "Game Logic"]
+        },
+        {
+          "@type": ["SoftwareApplication"],
+          "@id": "https://sachin-portfoli.vercel.app/#project-mcp-tool",
+          "name": "MCP Integration Tool",
+          "alternateName": "Model Context Protocol Integration Utility",
+          "applicationCategory": "DeveloperApplication",
+          "operatingSystem": "Cross-platform",
+          "softwareVersion": "1.0.0",
+          "datePublished": "2025-06-01",
+          "description": "Developer tool for integrating Model Context Protocol (MCP) server architectures and Claude API agent workflows.",
+          "url": "https://sachin-portfoli.vercel.app/#project-mcp-tool",
+          "author": { "@id": "https://sachin-portfoli.vercel.app/#person" },
+          "creator": { "@id": "https://sachin-portfoli.vercel.app/#person" },
+          "publisher": { "@id": "https://sachin-portfoli.vercel.app/#person" },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+          },
+          "featureList": [
+            "MCP server protocol integration",
+            "Claude API agent bindings",
+            "Prompt caching efficiency layer"
+          ],
+          "softwareRequirements": "Python, Anthropic Claude API, MCP Protocol",
+          "keywords": ["Python", "Claude API", "MCP", "Model Context Protocol", "Prompt Caching"]
+        },
+        /* Portfolio ItemList Collection */
+        {
+          "@type": "ItemList",
+          "@id": "https://sachin-portfoli.vercel.app/#projects-list",
+          "name": "Featured Projects & Portfolio Work",
+          "description": "Collection of software engineering, AI integration, Android development, and web application projects by Sachit.",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": { "@id": "https://sachin-portfoli.vercel.app/#project-sky-roms" }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": { "@id": "https://sachin-portfoli.vercel.app/#project-moneypal" }
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "item": { "@id": "https://sachin-portfoli.vercel.app/#project-audify" }
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "item": { "@id": "https://sachin-portfoli.vercel.app/#project-mcp-tool" }
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "item": { "@id": "https://sachin-portfoli.vercel.app/#project-ai-chatbot" }
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "item": { "@id": "https://sachin-portfoli.vercel.app/#project-tic-tac-toe" }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

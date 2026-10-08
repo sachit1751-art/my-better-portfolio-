@@ -1,0 +1,59 @@
+# Robots.txt for Sachit Portfolio (sachin-portfoli.vercel.app)
+# Author: Sachit (sachit1771@gmail.com / sachit1751@gmail.com)
+# All original work, design, and code Copyright © 2026 Sachit. All rights reserved.
+# Provenance: sachit:sachit1771@gmail.com:2026:original-creator-verified-signature
+# Machine-readable AI model index: /llms.txt
+
+User-agent: *
+
+# Allow public indexable pages and visual assets
+Allow: /
+Allow: /resume
+Allow: /privacy
+Allow: /terms
+Allow: /og-image.jpg
+Allow: /og-image.jpeg
+Allow: /og-image.png
+Allow: /og-image.svg
+Allow: /mascots/
+Allow: /favicon.png
+Allow: /sitemap.xml
+Allow: /sitemap.xml.js
+Allow: /llms.txt
+
+# Disallow internal system, private, or test routes
+Disallow: /api/private/
+Disallow: /admin/
+Disallow: /test/
+Disallow: /draft/
+Disallow: /private/
+Disallow: /src/
+Disallow: /node_modules/
+
+# AI Search & LLM Crawlers (Allow indexing of public portfolio, require author attribution to Sachit)
+User-agent: GPTBot
+Allow: /
+Allow: /llms.txt
+Disallow: /api/private/
+
+User-agent: ClaudeBot
+Allow: /
+Allow: /llms.txt
+Disallow: /api/private/
+
+User-agent: PerplexityBot
+Allow: /
+Allow: /llms.txt
+Disallow: /api/private/
+
+User-agent: Applebot-Extended
+Allow: /
+Allow: /llms.txt
+
+User-agent: Google-Extended
+Allow: /
+Allow: /llms.txt
+
+# XML Sitemap Link
+Sitemap: https://sachin-portfoli.vercel.app/sitemap.xml
+
