@@ -148,7 +148,7 @@ export const Hero = memo<HeroProps>(({
             onClick={onViewResume}
             aria-label="View Resume"
             className="gsap-hero-btn"
-            icon={<FileText className="w-4 h-4" />}
+            icon={<FileText className="w-4 h-4 transition-transform duration-150 group-hover:scale-110" />}
             iconPosition="left"
           >
             View Resume

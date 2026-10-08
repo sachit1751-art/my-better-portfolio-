@@ -28,47 +28,29 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
   disabled,
   ...props
 }, ref) => {
-  const sizeClasses = {
-    sm: 'px-3 py-1.5 text-xs font-mono',
-    md: 'px-5 sm:px-6 py-3 text-sm sm:text-base font-body',
-    lg: 'px-6 sm:px-8 py-3.5 sm:py-4 text-base sm:text-lg font-body',
-  }[size];
-
-  const variantStyles: Record<ButtonVariant, { base: string; inlineStyle?: React.CSSProperties }> = {
-    primary: {
-      base: 'transition-all hover:-translate-y-0.5 active:translate-y-0 hover:bg-[var(--c-btn-bg-hover)] rounded-[var(--radius-md)] cursor-pointer font-body',
-      inlineStyle: { backgroundColor: 'var(--c-btn-bg)', color: 'var(--c-btn-text)' },
-    },
-    secondary: {
-      base: 'font-medium transition-all hover:-translate-y-0.5 active:translate-y-0 rounded-[var(--radius-md)] cursor-pointer font-body',
-      inlineStyle: {
-        border: '1px solid var(--c-border)',
-        backgroundColor: 'var(--c-input-bg)',
-        color: 'var(--c-heading)',
-      },
-    },
-    ghost: {
-      base: 'bg-transparent font-handwriting text-base cursor-pointer hover:opacity-80 transition-opacity',
-      inlineStyle: { color: 'var(--c-heading)' },
-    },
-    outline: {
-      base: 'transition-colors hover:border-[var(--c-border-focus)] rounded-[var(--radius-md)] cursor-pointer font-mono text-xs uppercase tracking-wider',
-      inlineStyle: {
-        border: '1px solid var(--c-border)',
-        backgroundColor: 'var(--c-input-bg)',
-        color: 'var(--c-heading)',
-      },
-    },
-    jellyfish: {
-      base: 'jellyfish-btn bg-transparent font-handwriting text-base cursor-pointer',
-      inlineStyle: {},
-    },
+  const sizeClasses: Record<ButtonSize, string> = {
+    sm: 'h-8 px-3.5 text-xs font-mono',
+    md: 'h-11 px-5 sm:px-6 py-2.5 text-sm sm:text-base font-body',
+    lg: 'h-13 px-7 sm:px-8 py-3.5 text-base sm:text-lg font-body',
   };
 
-  const selectedVariant = variantStyles[variant];
+  const variantStyles: Record<ButtonVariant, string> = {
+    primary:
+      'bg-[var(--c-btn-bg)] text-[var(--c-btn-text)] border border-transparent shadow-sm hover:bg-[var(--c-btn-bg-hover)] hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:scale-[0.98]',
+    secondary:
+      'bg-[var(--c-input-bg)] text-[var(--c-heading)] border border-[var(--c-border)] shadow-sm hover:border-[var(--c-heading)] hover:bg-[var(--c-card-gradient-from)] hover:-translate-y-0.5 hover:shadow-md active:translate-y-0 active:scale-[0.98] font-medium',
+    ghost:
+      'bg-transparent text-[var(--c-heading)] hover:bg-[var(--c-input-bg)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98]',
+    outline:
+      'bg-transparent text-[var(--c-heading)] border border-[var(--c-border)] hover:border-[var(--c-border-focus)] hover:bg-[var(--c-input-bg)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] font-mono text-xs uppercase tracking-wider',
+    jellyfish:
+      'jellyfish-btn bg-transparent font-handwriting text-base font-bold',
+  };
 
-  const combinedClass = `inline-flex items-center justify-center gap-2 select-none outline-none focus-visible:ring-2 focus-visible:ring-[var(--c-border-focus)] disabled:opacity-50 disabled:cursor-not-allowed ${sizeClasses} ${selectedVariant.base} ${className}`.trim();
-  const combinedStyle = { ...selectedVariant.inlineStyle, ...style };
+  const baseClasses =
+    'group inline-flex items-center justify-center gap-2 select-none outline-none rounded-[var(--radius-md)] cursor-pointer transition-all duration-150 ease-out focus-visible:ring-2 focus-visible:ring-[var(--c-border-focus)] disabled:opacity-50 disabled:pointer-events-none';
+
+  const combinedClass = `${baseClasses} ${sizeClasses[size]} ${variantStyles[variant]} ${className}`.trim();
 
   if (href) {
     return (
@@ -77,7 +59,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
         target={target}
         rel={rel}
         className={combinedClass}
-        style={combinedStyle}
+        style={style}
         {...(props as unknown as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
       >
         {icon && iconPosition === 'left' && <span className="inline-flex shrink-0">{icon}</span>}
@@ -92,7 +74,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
       ref={ref}
       disabled={disabled}
       className={combinedClass}
-      style={combinedStyle}
+      style={style}
       {...props}
     >
       {icon && iconPosition === 'left' && <span className="inline-flex shrink-0">{icon}</span>}

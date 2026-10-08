@@ -63,6 +63,10 @@ export function initSecurity() {
   };
 
   const checkDevtools = () => {
+    // If embedded inside an iframe (like AI Studio preview), inner dimensions do not match outer window
+    if (window.self !== window.top) {
+      return;
+    }
     const widthThreshold = window.outerWidth - window.innerWidth > threshold;
     const heightThreshold = window.outerHeight - window.innerHeight > threshold;
     const orientation = widthThreshold ? 'vertical' : 'horizontal';
@@ -84,12 +88,14 @@ export function initSecurity() {
     window.removeEventListener('resize', checkDevtools);
   };
 
-  // Prevent console.log override detection
-  Object.defineProperty(window, 'console', {
-    value: window.console,
-    writable: false,
-    configurable: false,
-  });
+  // Prevent console.log override detection safely
+  try {
+    Object.defineProperty(window, 'console', {
+      value: window.console,
+      writable: false,
+      configurable: false,
+    });
+  } catch {}
 
   // Override toString for sensitive functions
   const originalFunction = Function.prototype.toString;
