@@ -29,7 +29,7 @@ export const ScrollTextPath = memo(({ text, className = '' }: ScrollTextPathProp
     const fontSize = isMobile ? '32px' : '22px';
     const letterSpacingVal = isMobile ? 6.4 : 4.4;
     // bold monospace with 0.2em letter spacing
-    const fontStr = `bold ${fontSize} "JetBrains Mono", monospace`;
+    const fontStr = `bold ${fontSize} "Space Mono", "Courier New", monospace`;
     const pretextWidth = measureTextWidth(unitText, fontStr, { letterSpacing: letterSpacingVal });
 
     if (pretextWidth > 0) {

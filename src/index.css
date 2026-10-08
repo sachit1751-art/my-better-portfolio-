@@ -36,6 +36,15 @@
   size-adjust: 105%;
 }
 
+@font-face {
+  font-family: 'Courier-Fallback';
+  src: local('Courier New'), local('Courier'), local('monospace');
+  ascent-override: 100%;
+  descent-override: 25%;
+  line-gap-override: 0%;
+  size-adjust: 100%;
+}
+
 @layer base {
   :root {
     --radius-sm: 6px;
@@ -43,10 +52,10 @@
     --radius-lg: 14px;
     --radius-xl: 20px;
 
-    /* Font Variables: Primary handwriting (Kalam) + Single consistent body/mono (JetBrains Mono) */
+    /* Font Variables */
     --font-handwriting: 'Kalam', 'Kalam-Fallback', cursive;
-    --font-mono: 'JetBrains Mono', monospace;
-    --font-body: 'JetBrains Mono', monospace;
+    --font-mono: 'JetBrains Mono', 'Courier Prime', 'Courier-Fallback', monospace;
+    --font-body: 'Courier Prime', 'Courier-Fallback', monospace;
     --_wm: '\200B\FEFFsachit-2026\FEFF\200B';
 
     /* Invisible Design Watermarks & Steganographic Fingerprints */
@@ -296,6 +305,10 @@
     line-height: 1.4;
   }
 
+  .font-serif {
+    font-family: var(--font-body);
+  }
+
   code, pre, .font-mono {
     font-family: var(--font-mono);
   }
@@ -313,7 +326,7 @@
   }
 }
 
-/* Font overrides OUTSIDE @layer to ensure consistent font tokens */
+/* Font & Fluid Typography overrides OUTSIDE @layer to beat Tailwind v4 utilities */
 .font-sans {
   font-family: var(--font-handwriting) !important;
 }
@@ -323,6 +336,10 @@
 }
 
 .font-body {
+  font-family: var(--font-body) !important;
+}
+
+.font-serif {
   font-family: var(--font-body) !important;
 }
 
@@ -396,21 +413,21 @@ h2.sm\:text-5xl,
     transition-timing-function: ease-in-out;
   }
 
-  /* Theme color tokens - Uniform accessible contrast */
+  /* Theme color tokens */
   :root,
   [data-theme="kraft"] {
     --c-bg: #EFE6D5;
-    --c-heading: #1e1a16;
-    --c-body: #322c24;
-    --c-muted: #564c40;
-    --c-subtle: #453d33;
-    --c-faint: #5e5447;
-    --c-name: #1e1a16;
-    --c-border: rgba(30, 26, 22, 0.16);
-    --c-border-hover: rgba(30, 26, 22, 0.36);
-    --c-border-focus: #1e1a16;
-    --c-btn-bg: #1e1a16;
-    --c-btn-bg-hover: #322b22;
+    --c-heading: #241F1A;
+    --c-body: #443E35;
+    --c-muted: #686053;
+    --c-subtle: #544C40;
+    --c-faint: #7D7569;
+    --c-name: #2A2520;
+    --c-border: rgba(36, 31, 26, 0.12);
+    --c-border-hover: rgba(36, 31, 26, 0.28);
+    --c-border-focus: #241F1A;
+    --c-btn-bg: #241F1A;
+    --c-btn-bg-hover: #3A3328;
     --c-btn-text: #F4EDE0;
     --c-card-gradient-from: rgba(255,255,255,0.3);
     --c-card-gradient-to: rgba(255,255,255,0.05);
@@ -738,16 +755,16 @@ h2.sm\:text-5xl,
   opacity: 0.6;
 }
 
-/* Slippy Jellyfish button animation - Snappy tactile micro-interactions (<200ms) */
+/* Slippy Jellyfish button animation (from Uiverse.io) */
 .jellyfish-btn {
   --jf-color: var(--c-heading);
   position: relative;
   overflow: hidden;
   z-index: 1;
-  border: 1.5px solid var(--jf-color);
+  border: 2px solid var(--jf-color);
   border-radius: var(--radius-md);
   color: var(--jf-color);
-  transition: color 150ms ease-out, border-color 150ms ease-out, transform 150ms ease-out, box-shadow 150ms ease-out;
+  transition: color 0.5s;
 }
 
 .jellyfish-btn::before {
@@ -760,13 +777,11 @@ h2.sm\:text-5xl,
   border-radius: 50%;
   top: 100%;
   left: 100%;
-  transition: all 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.7s;
 }
 
 .jellyfish-btn:hover {
-  color: var(--c-btn-text, #F4EDE0);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px -2px rgba(30, 26, 22, 0.18);
+  color: #fff;
 }
 
 .jellyfish-btn:hover::before {
@@ -774,22 +789,18 @@ h2.sm\:text-5xl,
   left: -30px;
 }
 
-.jellyfish-btn:active {
-  transform: translateY(0) scale(0.98);
-}
-
 .jellyfish-btn:active::before {
   transition: background 0s;
 }
 
-/* View Projects button arrow animation - Snappy <160ms response with tactile displacement */
+/* View Projects button arrow animation */
 .view-projects-btn .arrow-icon {
-  transition: transform 160ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;
 }
 
 .view-projects-btn:hover .arrow-icon {
-  transform: translateX(6px);
+  transform: translateX(4px);
 }
 
 /* Paper grain texture overlay */
